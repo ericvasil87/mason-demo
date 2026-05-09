@@ -615,6 +615,8 @@ const EMAILJS_TEMPLATE = 'template_peuxd9o';
 const EMAILJS_KEY      = 'AUPTTqhNHEKbexylj';
 const SEND_TO          = 'eric.vasil87@gmail.com';
 
+window.addEventListener('load', () => emailjs.init(EMAILJS_KEY));
+
 async function sendEstimateEmail() {
   const btn = document.getElementById('emailBtn');
   btn.textContent = 'Sending...';
@@ -667,6 +669,5 @@ async function sendEstimateEmail() {
 fetchLivePricing();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init(EMAILJS_KEY);</script>
 </body>
 </html>
