@@ -717,11 +717,11 @@ const NJ_TOWNS = [
 function filterTowns(val) {
   const dd = document.getElementById('townDropdown');
   if (!val || val.length < 1) { dd.style.display = 'none'; return; }
-  const matches = NJ_TOWNS.filter(t => t.toLowerCase().startsWith(val.toLowerCase())).slice(0, 8);
+  const matches = NJ_TOWNS.filter(t => t.toLowerCase().includes(val.toLowerCase())).slice(0, 8);
   if (!matches.length) { dd.style.display = 'none'; return; }
   dd.innerHTML = matches.map(t =>
-    `<div onclick="selectTown('${t}')" style="padding:10px 14px;cursor:pointer;font-size:14px;border-bottom:0.5px solid var(--border);transition:background .1s"
-      onmouseover="this.style.background='var(--sand)'" onmouseout="this.style.background='white'">${t}</div>`
+    `<div onmousedown="selectTown('${t}')" style="padding:12px 14px;cursor:pointer;font-size:14px;border-bottom:1px solid #D8CDBF;background:white"
+      onmouseover="this.style.background='#F5EFE6'" onmouseout="this.style.background='white'">${t}</div>`
   ).join('');
   dd.style.display = 'block';
 }
