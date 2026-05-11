@@ -716,7 +716,7 @@ const NJ_TOWNS = [
 
 function filterTowns(val) {
   const dd = document.getElementById('townDropdown');
-  if (!val || val.length < 2) { dd.style.display = 'none'; return; }
+  if (!val || val.length < 1) { dd.style.display = 'none'; return; }
   const matches = NJ_TOWNS.filter(t => t.toLowerCase().startsWith(val.toLowerCase())).slice(0, 8);
   if (!matches.length) { dd.style.display = 'none'; return; }
   dd.innerHTML = matches.map(t =>
